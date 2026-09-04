@@ -5,6 +5,6 @@
   "generator": "OpenAI built-in image generation",
   "authorship": "Generated for this project at the user's direction",
   "approval": "Selected repository support card",
-  "promptSummary": "Compact full-color graphic-novel advertisement showing an indie developer dungeon adventurer carrying a medieval sword and unmistakable round metal shield, a defeated bug monster, and a hamburger, fries, and drink as treasure; exact sole copy: BUY ME McDONALD'S with an arrow; no logos, payment icons, or extra copy.",
+  "promptSummary": "Compact full-color graphic-novel advertisement showing an indie developer dungeon adventurer carrying a medieval sword and unmistakable round metal shield, a defeated bug monster, and a hamburger, fries, and drink as treasure; main copy: BUY ME McDONALD'S with an arrow; secondary DONATE action with a small blue PayPal symbol; no extra copy.",
   "runtimeUse": "Clickable support card for GitHub repository README files"
 }
