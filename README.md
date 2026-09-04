@@ -1,7 +1,7 @@
 # Buy Me McDonald’s
 
 <a href="https://dancockrell.github.io/buy-me-mcdonalds/?product=pirate-island">
-  <img src="public/assets/buy-me-mcdonalds-readme-card.png" alt="Fight bugs. Find burgers. Buy me McDonald's." width="640">
+  <img src="public/assets/buy-me-mcdonalds-readme-card.png" alt="Buy me McDonald's. Donate with PayPal." width="640">
 </a>
 
 A shared support page and PayPal backend for independent software. Every product supplies its own work totals while confirmed meal funding remains shared. The interface offers a five-item food-price scale and never treats a checkout handoff as proof of payment.
@@ -14,7 +14,7 @@ Place this near the top of a product's `README.md`. Change only the `product` va
 
 ```html
 <a href="https://dancockrell.github.io/buy-me-mcdonalds/?product=pirate-island">
-  <img src="https://dancockrell.github.io/buy-me-mcdonalds/assets/buy-me-mcdonalds-readme-card.png" alt="Fight bugs. Find burgers. Buy me McDonald's." width="640">
+  <img src="https://dancockrell.github.io/buy-me-mcdonalds/assets/buy-me-mcdonalds-readme-card.png" alt="Buy me McDonald's. Donate with PayPal." width="640">
 </a>
 ```
 
