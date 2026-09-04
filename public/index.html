@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101a1d">
+  <title>Buy me McDonald’s</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="campaign" aria-labelledby="title">
+    <img class="campaign-art" src="/assets/developer-dungeon-delving-ad-hero.png" alt="A cartoon software developer explores a dungeon, passing traps and defeated monsters on the way to a glowing hamburger meal in the treasure chamber.">
+    <div class="shade" aria-hidden="true"></div>
+
+    <section class="work" aria-label="Work completed">
+      <div class="work-totals">
+        <span><strong id="commits-value">—</strong><small>commits</small></span>
+        <span><strong id="pull-requests-value">—</strong><small>pull requests</small></span>
+        <span><strong id="meals-value">—</strong><small><span>Quarter Pounder meals</span><span>funded</span></small></span>
+      </div>
+    </section>
+
+    <section class="pitch">
+      <h1 id="title"><span>Buy me</span> McDonald’s.</h1>
+    </section>
+
+    <section class="menu" aria-label="Choose what to buy">
+      <div id="support-options" class="support-options"></div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

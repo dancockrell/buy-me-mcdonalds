@@ -1,0 +1,7 @@
+.git
+.env
+data/*.jsonl
+outputs
+work
+test
+node_modules

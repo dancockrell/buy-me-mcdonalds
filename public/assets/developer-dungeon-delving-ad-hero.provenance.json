@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "asset": "developer-dungeon-delving-ad-hero.png",
+  "createdOn": "2026-09-04",
+  "generator": "OpenAI built-in image generation",
+  "authorship": "Generated for this project at the user's direction",
+  "approval": "Approved runtime hero",
+  "promptSummary": "Modern color graphic-novel advertising illustration of a software developer dungeon-delving on foot through connected rooms, traps, defeated bug monsters and a stone guardian toward a hamburger, fries and drink presented as treasure; keyboard used as a shield; dark copy field and clean bottom action band; no generated interface text or payment symbols.",
+  "runtimeUse": "Above-the-fold support campaign hero",
+  "replaces": [
+    "developer-dungeon-dive-ad-hero.png",
+    "developer-dungeon-dive-hero.png",
+    "developer-dungeon-hamburger-hero.png",
+    "indie-developer-hamburger-hero-v2.png",
+    "indie-developer-hamburger-hero.png"
+  ]
+}

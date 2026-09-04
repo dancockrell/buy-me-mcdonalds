@@ -1,0 +1,14 @@
+{
+  "name": "buy-me-mcdonalds",
+  "version": "0.1.0",
+  "description": "Shared no-login support and PayPal applet for independent software products.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "stats:generate": "node tools/generate-product-stats.mjs",
+    "test": "node --test",
+    "check": "node --check src/server.mjs && node --check src/paypal.mjs && node --check src/store.mjs && node --check src/github.mjs && node --check tools/generate-product-stats.mjs && node --check public/app.js"
+  },
+  "engines": {"node": ">=20"}
+}

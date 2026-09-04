@@ -1,0 +1,9 @@
+.env
+data/*.jsonl
+!data/.gitkeep
+node_modules/
+coverage/
+work/
+public/assets/*
+!public/assets/developer-dungeon-delving-ad-hero.png
+!public/assets/developer-dungeon-delving-ad-hero.provenance.json
