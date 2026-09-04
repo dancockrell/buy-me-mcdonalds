@@ -24,10 +24,9 @@ export async function buildPages({
   for (const file of ["index.html", "styles.css", "app.js", "embed.js"]) {
     await cp(path.join(publicDir, file), path.join(outputDir, file));
   }
-  await cp(
-    path.join(publicDir, "assets", "developer-dungeon-delving-ad-hero.png"),
-    path.join(outputDir, "assets", "developer-dungeon-delving-ad-hero.png")
-  );
+  for (const asset of ["developer-dungeon-delving-ad-hero.png", "buy-me-mcdonalds-readme-card.png"]) {
+    await cp(path.join(publicDir, "assets", asset), path.join(outputDir, "assets", asset));
+  }
 
   const productIds = [];
   for (const filename of (await readdir(productsDir)).filter((name) => name.endsWith(".json")).sort()) {
