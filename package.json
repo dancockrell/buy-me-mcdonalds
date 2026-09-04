@@ -7,9 +7,10 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.mjs",
+    "pages:build": "node tools/build-pages.mjs",
     "stats:generate": "node tools/generate-product-stats.mjs",
     "test": "node --test",
-    "check": "node --check src/server.mjs && node --check src/paypal.mjs && node --check src/store.mjs && node --check src/github.mjs && node --check tools/generate-product-stats.mjs && node --check public/app.js"
+    "check": "node --check src/server.mjs && node --check src/paypal.mjs && node --check src/store.mjs && node --check src/github.mjs && node --check tools/generate-product-stats.mjs && node --check tools/build-pages.mjs && node --check public/app.js && node --check public/embed.js"
   },
   "engines": {"node": ">=20"}
 }

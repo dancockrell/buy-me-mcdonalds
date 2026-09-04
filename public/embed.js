@@ -1,13 +1,14 @@
 (() => {
   const script = document.currentScript;
-  const appletOrigin = new URL(script?.src || location.href).origin;
+  const appletBase = new URL('./', script?.src || location.href);
+  const appletOrigin = appletBase.origin;
   let overlay;
   let frame;
 
   function open(facts = {}) {
     if (!overlay) build();
     const productId = typeof facts.productId === 'string' ? facts.productId : '';
-    const nextUrl = new URL('/', appletOrigin);
+    const nextUrl = new URL('./', appletBase);
     if (productId) nextUrl.searchParams.set('product', productId);
     const destinationChanged = frame.src !== nextUrl.href;
     if (destinationChanged) frame.src = nextUrl.href;
@@ -36,7 +37,7 @@
     Object.assign(overlay.style, { position: 'fixed', inset: '0', zIndex: '2147483647', background: '#000b', padding: 'clamp(8px,3vw,30px)', display: 'grid', placeItems: 'center' });
     frame = document.createElement('iframe');
     frame.title = 'Support the person who made this';
-    frame.src = `${appletOrigin}/`;
+    frame.src = appletBase.href;
     frame.allow = 'payment';
     Object.assign(frame.style, { width: 'min(1440px,100%)', height: 'min(900px,100%)', border: '0', borderRadius: '10px', background: '#101817' });
     const closeButton = document.createElement('button');

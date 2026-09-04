@@ -2,6 +2,8 @@
 
 A shared support page and PayPal backend for independent software. Every product supplies its own work totals while confirmed meal funding remains shared. The interface offers a five-item food-price scale and never treats a checkout handoff as proof of payment.
 
+Live page: https://dancockrell.github.io/buy-me-mcdonalds/?product=pirate-island
+
 ## What works now
 
 - The default payment destination is `https://paypal.me/Morasoom`.
@@ -25,6 +27,16 @@ npm start
 ```
 
 Open `http://localhost:8787`.
+
+## Publish with GitHub Pages
+
+The included GitHub Actions workflow builds and deploys a static PayPal.Me edition on every push to `main`. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions** once. The public page then runs without a server, login, or secret:
+
+```text
+https://dancockrell.github.io/buy-me-mcdonalds/?product=pirate-island
+```
+
+The Pages edition displays the checked-in product statistics and sends each choice directly to `paypal.me/Morasoom` at the exact listed amount. Because PayPal.Me does not report completed payments back to GitHub Pages, set the repository Actions variable `QPC_MEALS_FUNDED_BASELINE` when the verified meal total changes. The Node deployment remains available when automatic PayPal capture verification and counting are needed.
 
 Configure the allowlisted products and their repositories:
 

@@ -30,9 +30,7 @@ function setCount(selector, value) {
 
 async function load() {
   try {
-    const response = await fetch(apiPath('/api/config'), { headers: { Accept: 'application/json' } });
-    if (!response.ok) throw new Error('Support menu unavailable.');
-    state.config = await response.json();
+    state.config = await loadConfig();
     renderWork(state.config.githubSnapshot || {});
     setCount('#meals-value', state.config.mealsFunded);
     const options = document.querySelector('#support-options');
@@ -46,6 +44,34 @@ async function load() {
   if (result === 'completed') status.textContent = 'Dinner acquired. Thank you.';
   if (result === 'cancelled') status.textContent = '';
   if (result === 'error') status.textContent = 'PayPal did not complete that.';
+}
+
+async function loadConfig() {
+  const loaders = location.hostname.endsWith('.github.io')
+    ? [loadStaticConfig, loadServerConfig]
+    : [loadServerConfig, loadStaticConfig];
+  for (const loader of loaders) {
+    try { return await loader(); }
+    catch { /* Try the other supported hosting mode. */ }
+  }
+  throw new Error('Support menu unavailable.');
+}
+
+async function loadServerConfig() {
+  const response = await fetch(apiPath('/api/config'), { headers: { Accept: 'application/json' } });
+  if (!response.ok) throw new Error('Server configuration unavailable.');
+  return response.json();
+}
+
+async function loadStaticConfig() {
+  const response = await fetch('./static-config.json', { headers: { Accept: 'application/json' } });
+  if (!response.ok) throw new Error('Static configuration unavailable.');
+  const config = await response.json();
+  const productId = requestedProductId || config.defaultProductId;
+  if (!config.productIds?.includes(productId)) throw new Error('Unknown support product.');
+  const snapshotResponse = await fetch(`./products/${encodeURIComponent(productId)}.json`, { headers: { Accept: 'application/json' } });
+  if (!snapshotResponse.ok) throw new Error('Product statistics unavailable.');
+  return { ...config, productId, githubSnapshot: await snapshotResponse.json() };
 }
 
 function optionButton(option) {
@@ -75,6 +101,12 @@ async function beginPayment(option, button) {
   button.disabled = true;
   status.textContent = 'Opening PayPal…';
   try {
+    if (state.config.paymentMode === 'paypal_me_static') {
+      const handle = state.config.paypalMeHandle;
+      if (!/^[A-Za-z0-9]{1,20}$/.test(handle)) throw new Error('PayPal unavailable.');
+      location.assign(`https://paypal.me/${handle}/${encodeURIComponent(option.amount)}USD`);
+      return;
+    }
     const response = await fetch(apiPath('/api/orders'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
