@@ -2,6 +2,7 @@
   "name": "buy-me-mcdonalds",
   "version": "0.1.0",
   "description": "Shared no-login support and PayPal applet for independent software products.",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {

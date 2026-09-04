@@ -111,3 +111,7 @@ npm run check
 ```
 
 The dated pricing evidence and operating documents are in `outputs/`.
+
+## License
+
+[MIT](LICENSE)
