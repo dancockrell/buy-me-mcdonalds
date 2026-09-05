@@ -1,10 +1,16 @@
 const state = { config: null };
 const status = document.querySelector('#status');
+const titleButton = document.querySelector('#title');
 const requestedProductId = new URLSearchParams(location.search).get('product');
 
 window.addEventListener('message', (event) => {
   if (!event.data || event.data.type !== 'independent-support-facts') return;
   renderWork(event.data);
+});
+
+titleButton.addEventListener('click', () => {
+  const option = state.config?.options?.find((item) => item.id === 'quarter_pounder_cheese_meal');
+  if (option) beginPayment(option, titleButton);
 });
 
 function renderWork(data) {
@@ -35,6 +41,8 @@ async function load() {
     setCount('#meals-value', state.config.mealsFunded);
     const options = document.querySelector('#support-options');
     for (const option of state.config.options) options.append(optionButton(option));
+    const qpcOption = state.config.options.find((option) => option.id === 'quarter_pounder_cheese_meal');
+    titleButton.disabled = !state.config.paymentConfigured || !qpcOption;
     if (!state.config.paymentConfigured) status.textContent = 'PayPal unavailable.';
   } catch {
     status.textContent = 'Support menu unavailable.';
