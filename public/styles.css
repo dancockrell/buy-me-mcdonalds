@@ -65,27 +65,42 @@ button { font: inherit; }
   max-width: min(760px, 49vw);
   padding: clamp(36px, 8vh, 90px) 0;
 }
-.pitch h1 {
+.title-button {
+  display: block;
   margin: 0;
   max-width: 9ch;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #f8f4e8;
+  cursor: pointer;
   font-family: "Arial Black", "Segoe UI Variable Display", "Segoe UI", sans-serif;
   font-size: clamp(5.2rem, 10.6vw, 12.8rem);
   font-style: italic;
   font-weight: 950;
   letter-spacing: -.085em;
   line-height: .74;
+  text-align: left;
   text-transform: uppercase;
   text-wrap: balance;
   text-shadow: 0 .05em .3em rgba(0, 0, 0, .68);
   transform: skewY(-2deg);
 }
-.pitch h1 span {
+.title-button span {
   display: block;
   color: #e5b352;
   font-size: .42em;
   letter-spacing: .02em;
   line-height: 1.25;
 }
+.title-button:hover:not(:disabled) {
+  text-shadow: 0 .05em .34em rgba(0, 0, 0, .78), 0 0 .12em rgba(229, 179, 82, .22);
+}
+.title-button:focus-visible {
+  outline: 3px solid #edc16a;
+  outline-offset: 8px;
+}
+.title-button:disabled { cursor: default; }
 .menu { grid-column: 1 / -1; align-self: end; }
 .support-options {
   display: grid;
@@ -171,7 +186,7 @@ button { font: inherit; }
   .work-totals strong { font-size: clamp(1.5rem, 8vw, 2.5rem); }
   .work-totals small { font-size: clamp(.62rem, 2.5vw, .72rem); }
   .pitch { width: 100%; max-width: none; padding: 5vh 0 20vh; }
-  .pitch h1 { max-width: none; font-size: clamp(3rem, 13vw, 5.8rem); }
+  .title-button { max-width: none; font-size: clamp(3rem, 13vw, 5.8rem); }
   .menu { width: 100%; align-self: stretch; }
   .support-options { grid-template-columns: repeat(2, 1fr); gap: 6px; }
   .option { min-height: 68px; padding: 11px 13px; }
