@@ -6,11 +6,15 @@
 
 A shared support page and PayPal backend for independent software. Every product supplies its own work totals while confirmed meal funding remains shared. The interface offers a five-item food-price scale and never treats a checkout handoff as proof of payment.
 
-Live page: https://dancockrell.github.io/buy-me-mcdonalds/?product=pirate-island
+## Support the work
+
+[**Buy me McDonald's**](https://dancockrell.github.io/buy-me-mcdonalds/) is an optional way to support Dan Cockrell's independent software, game, and media work through PayPal. See [the GitHub profile](https://github.com/dancockrell) for the projects and background.
+
+The live page currently defaults to Pirate Island for its product statistics. The examples below show that configured product; they do not imply that every project already has a statistics manifest or integration.
 
 ## Put the support card in a repository
 
-Place this near the top of a product's `README.md`. Change only the `product` value in the destination URL:
+Use one compact Support or About section in a profile or product README. A text link is sufficient; the card below is optional. Use a product ID only after configuring its repository mapping and statistics manifest as described below:
 
 ```html
 <a href="https://dancockrell.github.io/buy-me-mcdonalds/?product=pirate-island">
