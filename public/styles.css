@@ -32,6 +32,15 @@ button { font: inherit; }
 }
 
 .work { grid-column: 1; align-self: start; max-width: 560px; }
+.community-line {
+  max-width: 38ch;
+  margin: 0 0 clamp(18px, 2vw, 30px);
+  color: rgba(248, 244, 232, .9);
+  font-size: clamp(.95rem, 1.15vw, 1.2rem);
+  font-weight: 720;
+  line-height: 1.35;
+  text-shadow: 0 2px 16px #000;
+}
 .work-totals { display: flex; gap: clamp(28px, 3.4vw, 66px); }
 .work-totals span { display: grid; gap: 1px; }
 .work-totals strong {
@@ -157,6 +166,7 @@ button { font: inherit; }
       linear-gradient(180deg, rgba(7, 14, 17, .92) 0%, rgba(7, 14, 17, .28) 28%, rgba(7, 14, 17, .08) 48%, rgba(7, 14, 17, .98) 76%),
       linear-gradient(90deg, rgba(7, 14, 17, .45), transparent 80%);
   }
+  .community-line { margin-bottom: 14px; font-size: .85rem; }
   .work-totals { gap: clamp(10px, 3.8vw, 18px); }
   .work-totals strong { font-size: clamp(1.5rem, 8vw, 2.5rem); }
   .work-totals small { font-size: clamp(.62rem, 2.5vw, .72rem); }
